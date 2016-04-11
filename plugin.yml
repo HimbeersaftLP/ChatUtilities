@@ -1,0 +1,19 @@
+    name: ChatUtilities
+    main: himbeer\chatutilities\main
+    version: 1.0.0
+    api: [1.14.0, 2.0.0]
+    
+    commands:
+        nothing:
+            usage: "/nothing"
+            description: "Does nothing."
+            permission: chatu.nothing
+        easybroadcast:
+            usage: "/easybroadcast [message]"
+            description: "Broadcasts a message"
+            permission: chatu.ebcast
+            aliases: [ebcast]
+        sendme:
+            usage: "/sendme [message]"
+            description: "Sends the message back to the sender"
+            permissions: chatu.sendme
