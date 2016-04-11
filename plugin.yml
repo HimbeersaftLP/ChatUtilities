@@ -7,7 +7,6 @@
         nothing:
             usage: "/nothing"
             description: "Does nothing."
-            permission: chatu.nothing
         easybroadcast:
             usage: "/easybroadcast [message]"
             description: "Broadcasts a message"
