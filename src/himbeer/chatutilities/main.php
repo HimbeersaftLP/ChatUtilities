@@ -20,7 +20,9 @@ class Main extends PluginBase implements Listener{
                case "easybroadcast":
                     if(count($args) < 1){
                          $sender->sendMessage("Usage: /easybroadcast [message]");
-                    }elseif($sender->hasPermission("chatu.ebcast")){
+                    }elseif($sender->hasPermission("chatu.ebcast") or $sender->isOp()){
+                         $args = str_replace("&nl", "\n", $args);
+		 	          $args = str_replace("&", "§", $args);
                          $this->getServer()->broadcastMessage(implode(" ",$args));
                     }else{
                          $sender->sendMessage("You don't have the permission to perform this command!");
@@ -29,11 +31,14 @@ class Main extends PluginBase implements Listener{
                case "sendme":
                     if(count($args) < 1){
                          $sender->sendMessage("Usage: /sendme [message]");
-                    }elseif($sender->hasPermission("chatu.sendme")){
-                         $sender->sendMessage(implode(" ",$args));
                     }else{
-                         $sender->sendMessage("You don't have the permission to perform this command!");
+                         $sname = $sender->getName();
+                         $args = str_replace("&nl", "\n", $args);
+		 	          $args = str_replace("&", "§", $args);
+		 	          $args = str_replace("&sender", $sname, $args);
+                         $sender->sendMessage(implode(" ",$args));
                     }
+                    break;
           }
           return true;
      }
