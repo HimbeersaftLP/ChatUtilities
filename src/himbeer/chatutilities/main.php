@@ -15,28 +15,52 @@ class Main extends PluginBase implements Listener{
      
      public function onCommand(CommandSender $sender, Command $command, $label, array $args){
           switch($command->getName()){
-               case "nothing":
+               case "donothing":
                     break;
-               case "easybroadcast":
+               case "broadcastmsg":
                     if(count($args) < 1){
-                         $sender->sendMessage("Usage: /easybroadcast [message]");
-                    }elseif($sender->hasPermission("chatu.ebcast") or $sender->isOp()){
+                         return false;
+                         break;
+                    }else{
                          $args = str_replace("&nl", "\n", $args);
                          $args = str_replace("&", "§", $args);
                          $this->getServer()->broadcastMessage(implode(" ",$args));
-                    }else{
-                         $sender->sendMessage("You don't have the permission to perform this command!");
+                         break;
                     }
                     break;
                case "sendme":
                     if(count($args) < 1){
-                         $sender->sendMessage("Usage: /sendme [message]");
+                         return false;
+                         break;
                     }else{
                          $sname = $sender->getName();
                          $args = str_replace("&nl", "\n", $args);
                          $args = str_replace("&sender", $sname, $args);
                          $args = str_replace("&", "§", $args);
                          $sender->sendMessage(implode(" ",$args));
+                         break;
+                    }
+                    break;
+               case "broadcastpopup":
+                    if(count($args) < 1){
+                         return false;
+                         break;
+                    }else{
+                         $args = str_replace("&nl", "\n", $args);
+                         $args = str_replace("&", "§", $args);
+                         $this->getServer()->broadcastPopup(implode(" ",$args));
+                         break;
+                    }
+                    break;
+               case "broadcasttip":
+                    if(count($args) < 1){
+                         return false;
+                         break;
+                    }else{
+                         $args = str_replace("&nl", "\n", $args);
+                         $args = str_replace("&", "§", $args);
+                         $this->getServer()->broadcastTip(implode(" ",$args));
+                         break;
                     }
                     break;
           }
