@@ -38,5 +38,5 @@
             default: true
         chatu.bcpopup:
             default: op
-        chatu.bctip
+        chatu.bctip:
             default: op
