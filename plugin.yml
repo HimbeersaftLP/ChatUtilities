@@ -1,18 +1,42 @@
     name: ChatUtilities
     main: himbeer\chatutilities\main
-    version: 2.0.1
+    version: 3.0.0
     api: [1.14.0, 2.0.0]
+    author: HimbeersaftLP
     
     commands:
-        nothing:
-            usage: "/nothing"
+        donothing:
+            usage: "/donothing"
             description: "Does nothing."
-        easybroadcast:
-            usage: "/easybroadcast [message]"
-            description: "Broadcasts a message"
-            permission: chatu.ebcast
-            aliases: [ebcast]
+            permission: chatu.nothing
+            aliases: [nothing]
+        broadcastmsg:
+            usage: "/broadcastmsg [message]"
+            description: "Broadcasts a message."
+            permission: chatu.bcmsg
+            aliases: [ebcast, bcmsg]
         sendme:
             usage: "/sendme [message]"
-            description: "Sends the message back to the sender"
+            description: "Sends the message back to the sender."
             permissions: chatu.sendme
+        broadcastpopup:
+            usage: "/broadcastpopup [message]"
+            description: "Broadcasts a popup."
+            permission: chatu.bcpopup
+            aliases: [bcpopup]
+        broadcasttip:
+            usage: "/broadcasttip [message]"
+            description: "Broadcasts a tip."
+            permission: chatu.bctip
+            aliases: [bctip]
+    permissions:
+        chatu.nothing:
+            default: true
+        chatu.bcmsg:
+            default: op
+        chatu.sendme:
+            default: true
+        chatu.bcpopup:
+            default: op
+        chatu.bctip
+            default: op
