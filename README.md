@@ -1,5 +1,5 @@
 # ChatUtilities
 
-![https://poggit.pmmp.io/ci.badge/HimbeersaftLP/ChatUtilities/ChatUtilities](Poggit Badge)
+![Poggit Badge](https://poggit.pmmp.io/ci.badge/HimbeersaftLP/ChatUtilities/ChatUtilities)
 
 A plugin for PocketMine
